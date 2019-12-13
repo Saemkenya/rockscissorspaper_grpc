@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto;
+
+enum Medal {
+    Essene = 0;
+    Gold = 1;
+    Charm = 2;
+    NoMedal = 3;
+}
+
+message Player {
+    string name = 1;
+    int64 lives = 2;
+    map<int32, Medal> medals = 3; // number the stored medals
+    Medal wins = 4;
+}
+
+message Choice {
+    string chosen = 1;
+    Player player = 2;
+}
+
+message OutCome {
+    Medal result = 1; // result can be draw | win | loose
+    Player winner = 2;
+    Player looser = 3;
+}
+
+message RPSProto {
+    repeated Player player = 1;
+}
+
+service RPSService {
+    rpc ChooseRock(Choice) returns (OutCome);
+    rpc ChoosePaper(Choice) returns (OutCome);
+    rpc ChooseScissors(Choice) returns (OutCome);
+    rpc RPSArena(Player) returns (stream OutCome);
+}
