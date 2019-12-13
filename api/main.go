@@ -8,7 +8,15 @@ import (
 )
 
 func main() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+	paperConn, err := grpc.Dial("192.168.122.1:18702", grpc.WithInsecure())
+=======
 	paperConn, err := grpc.Dial("localhost:18702", grpc.WithInsecure())
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
+=======
+	paperConn, err := grpc.Dial("localhost:18702", grpc.WithInsecure())
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 	if err != nil {
 		panic(err)
 	}
@@ -34,7 +42,14 @@ func main() {
 				Winner: winner,
 				Looser: looser,
 			}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 		}
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
+=======
+		}
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 		case paper:
 			req := &pb.OutCome{
 				Result: result,
@@ -48,6 +63,20 @@ func main() {
 					Lives: 10,
 					Medals: 0,
 					Wins: 0,
+<<<<<<< HEAD
+<<<<<<< HEAD
+				},
+			}
+			if response, err := paperClient.ChoosePaper(ctx, choice); err == nil {
+				ctx.JSON(http.StatusOK, gin.H{
+					"result": fmt.Sprint(response.Result),
+				})
+			} else {
+				ctx.JSON(http.StatusInternalServerError, gin.H{
+					"error":"Unable to call the paper service",
+=======
+=======
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 				}
 			}
 			if response, err := paperClient.ChoosePaper(ctx, choice); err == nil {
@@ -57,6 +86,10 @@ func main() {
 			} else {
 				ctx.JSON(http.StatusInternalServerError, gin.H{
 					"error":"Unable to call the paper service"
+<<<<<<< HEAD
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
+=======
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 				})
 			}
 		case scissors:
@@ -76,9 +109,19 @@ func main() {
 		log.Fatalf("Failed to start server bcuz : [%v]", err)
 	}
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+	req := &req
+=======
+=======
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 	req := &pb.OutCome{
 		Medal
 		Player
 		Player
 	}
+<<<<<<< HEAD
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
+=======
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 }

@@ -5,7 +5,15 @@ import (
 	"context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+<<<<<<< HEAD
+<<<<<<< HEAD
+	// "github.com/Saemkenya/rockscissorspaper_grpc/proto/rps.pb"
+=======
 	"github.com/Saemkenya/rockscissorspaper_grpc/proto/rps.pb"
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
+=======
+	"github.com/Saemkenya/rockscissorspaper_grpc/proto/rps.pb"
+>>>>>>> afd465589d7e2faea480ac200553d7e8f827d904
 )
 
 type server struct{}
